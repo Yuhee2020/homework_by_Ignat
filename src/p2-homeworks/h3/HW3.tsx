@@ -19,7 +19,7 @@ function HW3() {
     ]) // need to fix any
 
     const addUserCallback = (name: string) => { // need to fix any
-        setUsers([{_id: v1(), name},...users]) // need to fix
+        setUsers([...users,{_id: v1(), name}]) // need to fix
     }
 
     return (

@@ -4,7 +4,7 @@ import {UserType} from "./HW3";
 
 type GreetingContainerPropsType = {
     users: Array<UserType>
-    addUserCallback: (name:string)=>void // need to fix any
+    addUserCallback: ( )=>void // need to fix any
 }
 
 // более простой и понятный для новичков
