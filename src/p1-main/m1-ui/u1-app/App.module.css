@@ -1,3 +1,9 @@
 .App {
 background-color: snow;
 }
+
+.title{
+    text-align: center;
+    font-size: 50px;
+    height: 80px;
+}
