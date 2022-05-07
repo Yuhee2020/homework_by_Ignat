@@ -1,5 +1,6 @@
 import React, {ChangeEvent, KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
+import {MyButton} from "../../p1-main/MyButton/MyButton";
 
 type GreetingPropsType = {
     name: string
@@ -23,7 +24,7 @@ const Greeting: React.FC<GreetingPropsType> = (
                    className={inputClass}
                    onKeyDown={onEnter}
                    onBlur={setNameCallback}/>
-            <button onClick={addUser} disabled={!!error}>add</button>
+            <MyButton name={"add"} callback={addUser} disabled={!!error}/>
             <span>{totalUsers}</span>
             <div className={s.error}>{error}</div>
 
