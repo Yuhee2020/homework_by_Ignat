@@ -16,7 +16,7 @@ function Header() {
 
             <ul className="hidden-menu">
                 <li><NavLink className={({isActive}) => (isActive ? s.activeLink : s.link)} to="/">PreJunior </NavLink></li>
-                <li><NavLink className={({isActive}) => (isActive ? s.activeLink : s.link)} to="/Junior/*">Junior </NavLink></li>
+                <li><NavLink className={({isActive}) => (isActive ? s.activeLink : s.link)} to="/Junior">Junior </NavLink></li>
                 <li><NavLink className={({isActive}) => (isActive ? s.activeLink : s.link)} to="/Junior+/*  ">Junior+ </NavLink></li>
             </ul>
 

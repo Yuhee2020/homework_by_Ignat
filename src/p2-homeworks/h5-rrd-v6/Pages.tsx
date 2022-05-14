@@ -18,6 +18,7 @@ function Pages() {
 
                 в начале мы попадаем на страницу '/' и переходим сразу на страницу PRE_JUNIOR
                 <Route path={'/'} element={<PreJunior/>}/>
+                <Route path={'/Junior'} element={<Junior/>}/>
 
 
                 <Route path={'/*'} element={<Error404/>}/>
