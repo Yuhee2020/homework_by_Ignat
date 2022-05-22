@@ -3,8 +3,8 @@ import React, {SelectHTMLAttributes, DetailedHTMLProps, ChangeEvent} from 'react
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
-    options: any[]
-    onChangeOption: (option: any) => void
+    options?: any[]
+    onChangeOption?: (option: any) => void
 }
 
 const SuperSelect: React.FC<SuperSelectPropsType> = (
@@ -15,16 +15,16 @@ const SuperSelect: React.FC<SuperSelectPropsType> = (
         ...restProps
     }
 ) => {
-    const mappedOptions: any[]  = options.map(el=>{
+    const mappedOptions: any[]  = options? options.map((el,i)=>{
         return (
-            <option  key={el}>{el}</option>
+            <option value={el} key={i}> {el} </option>
         )
-    }); // map options with key
+    }):[]; // map options with key
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-       onChangeOption(e.currentTarget.value)
-       // onChange, onChangeOption
-        console.log(e.currentTarget.value)
+       onChange && onChange(e)
+       onChangeOption && onChangeOption(e.currentTarget.value)
+
     }
 
     return (

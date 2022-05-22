@@ -24,10 +24,15 @@ function Affairs(props: AffairsPropsType) {
     const setLow = () => {props.setFilter('low')}
 
     return (
-        <div className={s.Affairs}>
-
+        <div >
+            <table className={s.tab}>
+                <tr>
+                    <th>Name</th>
+                    <th>Priority</th>
+                    <th></th>
+                </tr>
             {mappedAffairs}
-
+            </table>
             <button onClick={setAll}>All</button>
             <button onClick={setHigh}>High</button>
             <button onClick={setMiddle}>Middle</button>

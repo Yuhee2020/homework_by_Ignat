@@ -11,3 +11,14 @@ button {
     background-color: green;
     color: greenyellow;
 }
+.tab{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.tab, th, td {
+    border: 1px solid;
+}
+.tab th, td {
+    width: 90px;
+}
