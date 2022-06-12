@@ -1,24 +1,33 @@
 import React from 'react'
+import {Slider} from "@mui/material";
 
-type SuperDoubleRangePropsType = {
-    onChangeRange?: (value: [number, number]) => void
-    value?: [number, number]
-    // min, max, step, disable, ...
-}
 
-const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
-    {
-        onChangeRange, value,
-        // min, max, step, disable, ...
+type PropsType = {
+    onChangeRange: (value: number[]) => void
+    value: number[]
+};
+
+const SuperDoubleRange = (props:PropsType) => {
+
+    const onChangeCallback = (event: Event, value: number | number[]) => {
+        props.onChangeRange(value as number[])
     }
-) => {
-    // сделать самому, можно подключать библиотеки
+
+
 
     return (
         <>
-            DoubleRange
+            <Slider
+                getAriaLabel={() => 'Temperature range'}
+                value={props.value}
+                onChange={onChangeCallback}
+                valueLabelDisplay="auto"
+                style={{width:"200px"}}
+                />
+
         </>
     )
 }
 
 export default SuperDoubleRange
+
